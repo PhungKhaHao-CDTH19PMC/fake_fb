@@ -110,41 +110,165 @@ class _FirstRouteState extends State<FirstRoute> {
   }
 }
 
-class SecondRoute extends StatelessWidget {
+class SecondRoute extends StatefulWidget {
   const SecondRoute({Key? key}) : super(key: key);
+  _SecondRouteState createState() => _SecondRouteState();
+}
 
+class _SecondRouteState extends State<SecondRoute> {
+  var _colorlike = Colors.black;
+  var _colorlike2 = Colors.black;
+  var _colorlikeComment = Colors.black;
+  var likenumber = 45;
+  var likenumber2 = 5;
+  bool _like = false;
+  bool _likeComment = false;
   @override
   Widget build(BuildContext context) {
     Widget homefb = Container(
-      padding: EdgeInsets.all(32),
+      padding: EdgeInsets.fromLTRB(32, 0, 32, 32),
       child: ListView(
         children: [
           Container(
-            child: Row(
+            color: Colors.white,
+            width: double.infinity,
+            margin: EdgeInsets.only(top: 5),
+            child: Column(
               children: [
-                Container(
-                  child: CircleAvatar(
-                    radius: 18,
-                    child: ClipOval(
-                      child: Image.asset(
-                        'images/lake.jpg',
-                      ),
-                    ),
+                ListTile(
+                  isThreeLine: false,
+                  title: Text("Khả Hào",
+                      style: TextStyle(fontFamily: 'RobotoBlack')),
+                  subtitle: Text("Vừa xong · 🌍",
+                      style: TextStyle(fontFamily: 'RobotoBlack')),
+                  trailing: Icon(Icons.more_horiz),
+                  leading: Container(
+                    width: 50,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        image: DecorationImage(
+                            image: AssetImage("images/avt.jpg"),
+                            fit: BoxFit.cover)),
+                    child: null,
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Column(
+                  padding: EdgeInsets.only(left: 15),
+                  width: double.infinity,
+                  child: Text(
+                    "Đẹp trai không mọi người❤️❤️❤️",
+                    style: TextStyle(fontSize: 18, fontFamily: 'Roboto'),
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+                Image.asset(
+                  'images/avt.jpg',
+                  width: 600,
+                  fit: BoxFit.cover,
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Khả Hào',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'RobotoBlack')),
-                      Text('08/11/2021',
-                          style: TextStyle(
-                              fontSize: 10,
-                              color: Colors.grey,
-                              fontFamily: 'RobotoBlack')),
+                      Container(
+                          margin: EdgeInsets.only(left: 10),
+                          child: Text("👍❤️ $likenumber ",
+                              style: TextStyle(fontSize: 14))),
+                      Container(
+                          margin: EdgeInsets.only(right: 10),
+                          child: Text(
+                            "46 Comments",
+                            style:
+                                TextStyle(fontSize: 14, fontFamily: 'Roboto'),
+                          )),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  height: 2,
+                  margin: EdgeInsets.only(top: 20),
+                  color: Colors.black12,
+                ),
+                Container(
+                  child: Row(
+                    children: [
+                      Expanded(
+                          flex: 1,
+                          child: Container(
+                            height: 45,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      _like = !_like;
+                                      if (_like == true) {
+                                        _colorlike = Colors.blue;
+                                        likenumber++;
+                                      } else {
+                                        _colorlike = Colors.black;
+                                        likenumber--;
+                                      }
+                                    });
+                                  },
+                                  icon: Icon(Icons.thumb_up_outlined),
+                                  color: _colorlike,
+                                ),
+                                SizedBox(
+                                  width: 0,
+                                ),
+                                Text(
+                                  "Like",
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      color: _colorlike,
+                                      fontFamily: 'Roboto'),
+                                )
+                              ],
+                            ),
+                          )),
+                      Expanded(
+                          flex: 1,
+                          child: Container(
+                            height: 45,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.comment_outlined),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  "Comment",
+                                  style: TextStyle(
+                                      fontSize: 18, fontFamily: 'Roboto'),
+                                )
+                              ],
+                            ),
+                          )),
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          height: 45,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.send_outlined),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Send",
+                                style: TextStyle(
+                                    fontSize: 18, fontFamily: 'Roboto'),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -152,97 +276,90 @@ class SecondRoute extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(top: 10, bottom: 10),
-            child: Text('Hồ đẹp không các bạn',
-                style:
-                    TextStyle(color: Colors.grey, fontFamily: 'RobotoBlack')),
-          ),
-          Image.asset(
-            'images/lake.jpg',
-            width: 600,
-            height: 240,
-            fit: BoxFit.cover,
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 10, bottom: 10),
+            padding: EdgeInsets.all(10),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.favorite_border),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.mode_comment_outlined),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.share),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  child: CircleAvatar(
-                    radius: 18,
-                    child: ClipOval(
-                      child: Image.asset(
-                        'images/lake.jpg',
+                    padding: EdgeInsets.all(5),
+                    child: CircleAvatar(
+                      backgroundColor: Colors.blue[400],
+                      child: CircleAvatar(
+                        radius: 18,
+                        backgroundImage: AssetImage('images/avt.jpg'),
+                      ),
+                    )),
+                Column(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey[300],
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      width: 230,
+                      padding: EdgeInsets.all(15),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Crush của Hào",
+                            style: TextStyle(fontFamily: 'RobotoBlack'),
+                          ),
+                          Text(
+                            "Anh Hào đẹp trai quá❤️❤️❤️❤️",
+                            style:
+                                TextStyle(fontSize: 16, fontFamily: 'Roboto'),
+                            // textAlign: TextAlign.center,
+                          ),
+                        ],
                       ),
                     ),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Column(
-                    children: [
-                      Text('Nguyễn Quốc Tuấn',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'RobotoBlack')),
-                      Text('08/11/2021',
-                          style: TextStyle(
-                              fontSize: 10,
-                              color: Colors.grey,
-                              fontFamily: 'RobotoBlack')),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 10, bottom: 10),
-            child: Text('Đi chơi cùng ae, hihi',
-                style:
-                    TextStyle(color: Colors.grey, fontFamily: 'RobotoBlack')),
-          ),
-          Image.asset(
-            'images/lake.jpg',
-            width: 600,
-            height: 240,
-            fit: BoxFit.cover,
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 10, bottom: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.favorite_border),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.mode_comment_outlined),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.share),
+                    Container(
+                      width: 230,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          InkWell(
+                              onTap: () {
+                                setState(
+                                  () {
+                                    setState(
+                                      () {
+                                        _likeComment = !_likeComment;
+                                        if (_likeComment == true) {
+                                          _colorlikeComment = Colors.blue;
+                                          likenumber2++;
+                                        } else {
+                                          _colorlikeComment = Colors.black;
+                                          likenumber2--;
+                                        }
+                                      },
+                                    );
+                                  },
+                                );
+                              },
+                              child: Text(
+                                "Like",
+                                style: TextStyle(color: _colorlikeComment),
+                              )),
+                          Text(
+                            "Reply",
+                            style: TextStyle(fontFamily: 'Roboto'),
+                          ),
+                          Text("$likenumber2👍❤️"),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 7, left: 15),
+                      width: 230,
+                      child: Text(
+                        "View 4 previous replies... ",
+                        style: TextStyle(fontFamily: 'Roboto'),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -250,6 +367,7 @@ class SecondRoute extends StatelessWidget {
         ],
       ),
     );
+
     Widget friend = Container(
       padding: EdgeInsets.all(32),
       child: Column(children: [
@@ -275,15 +393,15 @@ class SecondRoute extends StatelessWidget {
                       padding: EdgeInsets.only(left: 10),
                       child: Column(
                         children: [
-                          Text('Hào Fake 1',
+                          Text('Nguyễn Quốc Tuấn',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: 'RobotoBlack')),
+                                  fontFamily: 'Roboto')),
                           Text('08/11/2021',
                               style: TextStyle(
                                   fontSize: 10,
                                   color: Colors.grey,
-                                  fontFamily: 'RobotoBlack')),
+                                  fontFamily: 'Roboto')),
                         ],
                       ),
                     ),
@@ -291,8 +409,7 @@ class SecondRoute extends StatelessWidget {
                 ),
               ),
               Text('Bạn chung:14',
-                  style:
-                      TextStyle(color: Colors.grey, fontFamily: 'RobotoBlack')),
+                  style: TextStyle(color: Colors.grey, fontFamily: 'Roboto')),
               TextButton(
                 child: Text(
                   'Hủy kết bạn',
@@ -325,15 +442,15 @@ class SecondRoute extends StatelessWidget {
                       padding: EdgeInsets.only(left: 10),
                       child: Column(
                         children: [
-                          Text('Hào Fake 2',
+                          Text('Hồ Khánh Duy',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: 'RobotoBlack')),
+                                  fontFamily: 'Roboto')),
                           Text('08/11/2021',
                               style: TextStyle(
                                   fontSize: 10,
                                   color: Colors.grey,
-                                  fontFamily: 'RobotoBlack')),
+                                  fontFamily: 'Roboto')),
                         ],
                       ),
                     ),
@@ -341,8 +458,7 @@ class SecondRoute extends StatelessWidget {
                 ),
               ),
               Text('Bạn chung:14',
-                  style:
-                      TextStyle(color: Colors.grey, fontFamily: 'RobotoBlack')),
+                  style: TextStyle(color: Colors.grey, fontFamily: 'Roboto')),
               TextButton(
                 child: Text(
                   'Hủy kết bạn',
@@ -375,15 +491,15 @@ class SecondRoute extends StatelessWidget {
                       padding: EdgeInsets.only(left: 10),
                       child: Column(
                         children: [
-                          Text('Hào Fake 3',
+                          Text('Đức Toàn',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: 'RobotoBlack')),
+                                  fontFamily: 'Roboto')),
                           Text('08/11/2021',
                               style: TextStyle(
                                   fontSize: 10,
                                   color: Colors.grey,
-                                  fontFamily: 'RobotoBlack')),
+                                  fontFamily: 'Roboto')),
                         ],
                       ),
                     ),
@@ -391,8 +507,7 @@ class SecondRoute extends StatelessWidget {
                 ),
               ),
               Text('Bạn chung:14',
-                  style:
-                      TextStyle(color: Colors.grey, fontFamily: 'RobotoBlack')),
+                  style: TextStyle(color: Colors.grey, fontFamily: 'Roboto')),
               TextButton(
                 child: Text(
                   'Hủy kết bạn',
@@ -425,15 +540,15 @@ class SecondRoute extends StatelessWidget {
                       padding: EdgeInsets.only(left: 10),
                       child: Column(
                         children: [
-                          Text('Hào Fake 4',
+                          Text('Nguyễn Đức Phát',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: 'RobotoBlack')),
+                                  fontFamily: 'Roboto')),
                           Text('08/11/2021',
                               style: TextStyle(
                                   fontSize: 10,
                                   color: Colors.grey,
-                                  fontFamily: 'RobotoBlack')),
+                                  fontFamily: 'Roboto')),
                         ],
                       ),
                     ),
@@ -441,8 +556,7 @@ class SecondRoute extends StatelessWidget {
                 ),
               ),
               Text('Bạn chung:14',
-                  style:
-                      TextStyle(color: Colors.grey, fontFamily: 'RobotoBlack')),
+                  style: TextStyle(color: Colors.grey, fontFamily: 'Roboto')),
               TextButton(
                 child: Text(
                   'Hủy kết bạn',
@@ -475,15 +589,15 @@ class SecondRoute extends StatelessWidget {
                       padding: EdgeInsets.only(left: 10),
                       child: Column(
                         children: [
-                          Text('Hào Fake 5',
+                          Text('Khả Hào',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: 'RobotoBlack')),
+                                  fontFamily: 'Roboto')),
                           Text('08/11/2021',
                               style: TextStyle(
                                   fontSize: 10,
                                   color: Colors.grey,
-                                  fontFamily: 'RobotoBlack')),
+                                  fontFamily: 'Roboto')),
                         ],
                       ),
                     ),
@@ -491,8 +605,7 @@ class SecondRoute extends StatelessWidget {
                 ),
               ),
               Text('Bạn chung:14',
-                  style:
-                      TextStyle(color: Colors.grey, fontFamily: 'RobotoBlack')),
+                  style: TextStyle(color: Colors.grey, fontFamily: 'Roboto')),
               TextButton(
                 child: Text(
                   'Hủy kết bạn',
@@ -948,7 +1061,10 @@ class SecondRoute extends StatelessWidget {
               ],
             ),
             title: const Text('facebook',
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'RobotoBlack')),
           ),
           body: TabBarView(
             children: [
@@ -977,7 +1093,10 @@ class SecondRoute extends StatelessWidget {
                   ),
                 ),
                 ListTile(
-                  title: Text('Profile'),
+                  title: Text(
+                    'Profile',
+                    style: TextStyle(fontFamily: 'Roboto'),
+                  ),
                   leading: Icon(Icons.account_circle),
                   onTap: () {
                     Navigator.push(
@@ -987,7 +1106,8 @@ class SecondRoute extends StatelessWidget {
                   },
                 ),
                 ListTile(
-                  title: Text('Security'),
+                  title:
+                      Text('Security', style: TextStyle(fontFamily: 'Roboto')),
                   leading: Icon(Icons.shield),
                   onTap: () {
                     Navigator.push(context,
@@ -995,7 +1115,7 @@ class SecondRoute extends StatelessWidget {
                   },
                 ),
                 ListTile(
-                  title: Text('Logout'),
+                  title: Text('Logout', style: TextStyle(fontFamily: 'Roboto')),
                   leading: Icon(Icons.exit_to_app),
                   onTap: () {
                     Navigator.push(
@@ -1032,16 +1152,16 @@ class ThirtRoute extends StatelessWidget {
             ),
             const Text(
               "UPS...countn' sign in",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold, fontFamily: 'RobotoBlack'),
+              style:
+                  TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Roboto'),
             ),
             const Text(
               'Your username and password do not match',
-              style: TextStyle(color: Colors.grey, fontFamily: 'RobotoBlack'),
+              style: TextStyle(color: Colors.grey, fontFamily: 'Roboto'),
             ),
             const Text(
               'Please try again',
-              style: TextStyle(color: Colors.grey, fontFamily: 'RobotoBlack'),
+              style: TextStyle(color: Colors.grey, fontFamily: 'Roboto'),
             ),
             Container(
               padding: EdgeInsets.fromLTRB(32, 100, 32, 32),
@@ -1104,7 +1224,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               const Text(
                 'Speak, friend, and enter',
-                style: TextStyle(color: Colors.blue, fontFamily: 'RobotoBlack'),
+                style: TextStyle(color: Colors.blue, fontFamily: 'Roboto'),
               ),
               Container(
                 padding: const EdgeInsets.only(top: 400),
@@ -1122,12 +1242,16 @@ class ProfileRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        extendBodyBehindAppBar: true,
         appBar: AppBar(
           toolbarHeight: 40,
           title: const Text(
             'Huỳnh Xuân Thịnh',
             style: TextStyle(
-                color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
+                color: Colors.black,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'RobotoBlack'),
           ),
           centerTitle: true,
           backgroundColor: Colors.white,
@@ -1194,7 +1318,8 @@ class ProfileRoute extends StatelessWidget {
                     fontSize: 25.0,
                     color: Colors.blueGrey,
                     letterSpacing: 2.0,
-                    fontWeight: FontWeight.w400),
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'RobotoBlack'),
               ),
               SizedBox(
                 height: 10,
@@ -1205,7 +1330,8 @@ class ProfileRoute extends StatelessWidget {
                     fontSize: 18.0,
                     color: Colors.black45,
                     letterSpacing: 2.0,
-                    fontWeight: FontWeight.w300),
+                    fontWeight: FontWeight.w300,
+                    fontFamily: 'Roboto'),
               ),
               SizedBox(
                 height: 10,
@@ -1216,7 +1342,8 @@ class ProfileRoute extends StatelessWidget {
                     fontSize: 15.0,
                     color: Colors.black45,
                     letterSpacing: 2.0,
-                    fontWeight: FontWeight.w300),
+                    fontWeight: FontWeight.w300,
+                    fontFamily: 'Roboto'),
               ),
               SizedBox(
                 height: 10,
@@ -1227,7 +1354,8 @@ class ProfileRoute extends StatelessWidget {
                     fontSize: 15.0,
                     color: Colors.black45,
                     letterSpacing: 2.0,
-                    fontWeight: FontWeight.w300),
+                    fontWeight: FontWeight.w300,
+                    fontFamily: 'Roboto'),
               ),
               SizedBox(
                 height: 10,
@@ -1250,7 +1378,8 @@ class ProfileRoute extends StatelessWidget {
                               style: TextStyle(
                                   color: Colors.blueAccent,
                                   fontSize: 22.0,
-                                  fontWeight: FontWeight.w600),
+                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'RobotoBlack'),
                             ),
                             SizedBox(
                               height: 7,
@@ -1260,7 +1389,8 @@ class ProfileRoute extends StatelessWidget {
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 22.0,
-                                  fontWeight: FontWeight.w300),
+                                  fontWeight: FontWeight.w300,
+                                  fontFamily: 'Roboto'),
                             )
                           ],
                         ),
@@ -1273,7 +1403,8 @@ class ProfileRoute extends StatelessWidget {
                               style: TextStyle(
                                   color: Colors.blueAccent,
                                   fontSize: 22.0,
-                                  fontWeight: FontWeight.w600),
+                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'RobotoBlack'),
                             ),
                             SizedBox(
                               height: 7,
@@ -1283,7 +1414,8 @@ class ProfileRoute extends StatelessWidget {
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 22.0,
-                                  fontWeight: FontWeight.w300),
+                                  fontWeight: FontWeight.w300,
+                                  fontFamily: 'Roboto'),
                             )
                           ],
                         ),
@@ -1315,7 +1447,10 @@ class _Security extends State<Security> {
         title: const Text(
           'Bảo mật & quyền riêng tư',
           style: TextStyle(
-              color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
+              color: Colors.black,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'RobotoBlack'),
         ),
         backgroundColor: Colors.white,
         leading: Navigator.canPop(context)
@@ -1348,7 +1483,8 @@ class _Security extends State<Security> {
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 16,
-                    fontWeight: FontWeight.bold),
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'RobotoBlack'),
               ),
             ),
             subtitle: Container(
@@ -1356,9 +1492,7 @@ class _Security extends State<Security> {
               child: Text(
                 'Cập nhật thông tin để góp phần bảo vệ tài khoản.',
                 style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 11,
-                ),
+                    color: Colors.black, fontSize: 13, fontFamily: 'Roboto'),
               ),
             ),
           ),
@@ -1374,9 +1508,9 @@ class _Security extends State<Security> {
                     label: Text(
                       "Thông tin cá nhân và tài khoản",
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontFamily: 'Roboto'),
                     ),
                     onPressed: () {},
                   ),
@@ -1395,9 +1529,9 @@ class _Security extends State<Security> {
                     label: Text(
                       "Mật khẩu và bảo mật",
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontFamily: 'Roboto'),
                     ),
                     onPressed: () {},
                   ),
@@ -1416,9 +1550,9 @@ class _Security extends State<Security> {
                     label: Text(
                       "Thanh toán",
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontFamily: 'Roboto'),
                     ),
                     onPressed: () {},
                   ),
@@ -1438,7 +1572,8 @@ class _Security extends State<Security> {
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 16,
-                    fontWeight: FontWeight.bold),
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'RobotoBlack'),
               ),
             ),
             subtitle: Container(
@@ -1446,9 +1581,7 @@ class _Security extends State<Security> {
               child: Text(
                 'Kiểm soát ai có thể xem bài viết, tin và trang cá nhân của bạn.',
                 style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 11,
-                ),
+                    color: Colors.black, fontSize: 13, fontFamily: 'Roboto'),
               ),
             ),
           ),
@@ -1464,9 +1597,9 @@ class _Security extends State<Security> {
                     label: Text(
                       "Thông tin trên trang cá nhân",
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontFamily: 'Roboto'),
                     ),
                     onPressed: () {},
                   ),
@@ -1486,9 +1619,9 @@ class _Security extends State<Security> {
                     label: Text(
                       "Bài viết",
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontFamily: 'Roboto'),
                     ),
                     onPressed: () {},
                   ),
@@ -1507,9 +1640,9 @@ class _Security extends State<Security> {
                     label: Text(
                       "Tin",
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontFamily: 'Roboto'),
                     ),
                     onPressed: () {},
                   ),
@@ -1528,9 +1661,9 @@ class _Security extends State<Security> {
                     label: Text(
                       "Chặn",
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontFamily: 'Roboto'),
                     ),
                     onPressed: () {},
                   ),
@@ -1550,7 +1683,8 @@ class _Security extends State<Security> {
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 17,
-                    fontWeight: FontWeight.bold),
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'RobotoBlack'),
               ),
             ),
           ),
@@ -1565,9 +1699,9 @@ class _Security extends State<Security> {
                     label: Text(
                       "Điều khoản dịch vụ",
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontFamily: 'Roboto'),
                     ),
                     onPressed: () {},
                   ),
@@ -1586,9 +1720,9 @@ class _Security extends State<Security> {
                     label: Text(
                       "Chính sách dữ liệu",
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontFamily: 'Roboto'),
                     ),
                     onPressed: () {},
                   ),
@@ -1607,9 +1741,9 @@ class _Security extends State<Security> {
                     label: Text(
                       "Chính sách cookie",
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontFamily: 'Roboto'),
                     ),
                     onPressed: () {},
                   ),
@@ -1628,9 +1762,9 @@ class _Security extends State<Security> {
                     label: Text(
                       "Tiêu chuẩn cộng đồng",
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontFamily: 'Roboto'),
                     ),
                     onPressed: () {},
                   ),
