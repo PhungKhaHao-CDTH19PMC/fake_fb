@@ -110,6 +110,237 @@ class _FirstRouteState extends State<FirstRoute> {
   }
 }
 
+class routebb extends StatefulWidget {
+  const routebb({Key? key}) : super(key: key);
+  _routebbState createState() => _routebbState();
+}
+class _routebbState extends State<routebb>{
+  @override
+  Widget build(BuildContext context) {
+        Widget friend = Padding(
+      padding: EdgeInsets.all(32),
+      child: ListView(children: [
+        Container(
+          child: Row(
+            children: [
+              Container(
+                padding: EdgeInsets.only(right: 10),
+                child: SizedBox(
+                width: 120,
+                height: 32,//  // specific value
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  color: Colors.blue,
+                  textColor: Colors.white,
+                  child: Text("<-- Quay lại",
+                          style: TextStyle(fontSize: 14)),
+                  ),
+                )
+              ),
+              
+            ],
+          )
+        ),
+        Container(
+          padding: EdgeInsets.only(top: 20, bottom: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                child: Row(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(right: 10),
+                    child: Text("4", style: TextStyle(fontFamily: "RobotoBlack", fontSize:17, color: Colors.red, fontWeight:FontWeight.bold)),
+                  ),
+                  Container(
+                      padding: EdgeInsets.only(right: 10),
+                    child: Text("bạn bè", style: TextStyle(fontFamily: "RobotoBlack", fontSize:20, color: Colors.black, fontWeight:FontWeight.bold)),
+                  ),
+                  ],
+                ),
+
+                
+              ),
+              Container(
+                child: Text("sắp xếp", style: TextStyle(fontFamily: "Roboto", fontSize:20, color:Colors.blue)),
+              )
+            ],
+          )
+        ),
+        Container(
+          padding: EdgeInsets.only(top: 10, bottom: 15),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                        radius: 35,
+                        child: ClipOval(
+                          child: Image.asset(
+                            'images/lake.jpg',
+                          ),
+                        ),
+                      ),
+                    Container(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(bottom: 5),
+                            child: Text("Quỳnh Như", style: TextStyle(fontFamily: "RobotoBlack", fontSize:20, color: Colors.black, fontWeight:FontWeight.bold)),
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(bottom: 5),
+                            child: Text("34 bạn chung" , style: TextStyle(fontFamily: "RobotoBlack", color: Colors.grey)),
+                          ),
+                        ],
+                      ),
+                    ) 
+                  ],
+                )
+              ),
+              TextButton(child: Text("Hủy kết bạn", style: TextStyle(fontFamily: "RobotoBlack", color: Colors.blue)),onPressed:(){}),
+            ],
+          ),
+        ),
+                  Container(
+          padding: EdgeInsets.only(top: 10, bottom: 15),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                        radius: 35,
+                        child: ClipOval(
+                          child: Image.asset(
+                            'images/lake.jpg',
+                          ),
+                        ),
+                      ),
+                    Container(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(bottom: 5),
+                            child: Text("Bích Hằng", style: TextStyle(fontFamily: "RobotoBlack", fontSize:20, color: Colors.black, fontWeight:FontWeight.bold)),
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(bottom: 5),
+                            child: Text("34 bạn chung" , style: TextStyle(fontFamily: "RobotoBlack", color: Colors.grey)),
+                          ),
+                          
+                        ],
+                      ),
+                    ) 
+                  ],
+                )
+              ),
+              TextButton(child: Text("Hủy kết bạn", style: TextStyle(fontFamily: "RobotoBlack", color: Colors.blue)),onPressed:(){}),
+            ],
+          ),
+        ),
+                Container(
+          padding: EdgeInsets.only(top: 10, bottom: 15),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                        radius: 35,
+                        child: ClipOval(
+                          child: Image.asset(
+                            'images/lake.jpg',
+                          ),
+                        ),
+                      ),
+                    Container(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(bottom: 5),
+                            child: Text("Bo Nguyễn", style: TextStyle(fontFamily: "RobotoBlack", fontSize:20, color: Colors.black, fontWeight:FontWeight.bold)),
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(bottom: 5),
+                            child: Text("34 bạn chung" , style: TextStyle(fontFamily: "RobotoBlack", color: Colors.grey)),
+                          ),
+                          
+                        ],
+                      ),
+                    ) 
+                  ],
+                )
+              ),
+              TextButton(child: Text("Hủy kết bạn", style: TextStyle(fontFamily: "RobotoBlack", color: Colors.blue)),onPressed:(){}),
+            ],
+          ),
+        ),
+                Container(
+          padding: EdgeInsets.only(top: 10, bottom: 15),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                        radius: 35,
+                        child: ClipOval(
+                          child: Image.asset(
+                            'images/lake.jpg',
+                          ),
+                        ),
+                      ),
+                    Container(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(bottom: 5),
+                            child: Text("Long Phạm", style: TextStyle(fontFamily: "RobotoBlack", fontSize:20, color: Colors.black, fontWeight:FontWeight.bold)),
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(bottom: 5),
+                            child: Text("34 bạn chung" , style: TextStyle(fontFamily: "RobotoBlack", color: Colors.grey)),
+                          ),
+                        ],
+                      ),
+                    ) 
+                  ],
+                )
+              ),
+              TextButton(child: Text("Hủy kết bạn", style: TextStyle(fontFamily: "RobotoBlack", color: Colors.blue)),onPressed:(){}),
+            ],
+          ),
+        ),
+      ]),
+    );
+    return Scaffold(
+      body:Container(child: friend,));
+  }
+}
+
 class SecondRoute extends StatefulWidget {
   const SecondRoute({Key? key}) : super(key: key);
   _SecondRouteState createState() => _SecondRouteState();
@@ -368,11 +599,55 @@ class _SecondRouteState extends State<SecondRoute> {
       ),
     );
 
-    Widget friend = Container(
+    Widget friend = Padding(
       padding: EdgeInsets.all(32),
-      child: Column(children: [
+      child: ListView(children: [
         Container(
-          padding: EdgeInsets.only(top: 10, bottom: 10),
+          child: Row(
+            children: [
+              Container(
+                padding: EdgeInsets.only(right: 10),
+                child: SizedBox(
+                width: 55,
+                height: 32,//  // specific value
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),),
+                  onPressed: () {},
+                  color: Colors.grey[400],
+                  textColor: Colors.black,
+                  child: Text("Gợi ý",
+                          style: TextStyle(fontSize: 14)),
+                  ),
+                )
+              ),
+              Container(
+                padding: EdgeInsets.only(right: 10),
+                child: SizedBox(
+                width: 130,
+                height: 32,//  // specific value
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const routebb()));
+                    setState(() {});
+                  },
+                  color: Colors.grey[400],
+                  textColor: Colors.black,
+                  child: Text("Tất cả bạn bè",
+                          style: TextStyle(fontSize: 14)),
+                  ),
+                )
+              )
+            ],
+          )
+        ),
+        Container(
+          padding: EdgeInsets.only(top: 20, bottom: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -380,340 +655,349 @@ class _SecondRouteState extends State<SecondRoute> {
                 child: Row(
                   children: [
                     Container(
-                      child: CircleAvatar(
-                        radius: 18,
+                      padding: EdgeInsets.only(right: 10),
+                    child: Text("Lời mời kết bạn", style: TextStyle(fontFamily: "RobotoBlack", fontSize:20, color: Colors.black, fontWeight:FontWeight.bold)),
+                  ),
+                  Container(
+                      padding: EdgeInsets.only(right: 10),
+                    child: Text("4", style: TextStyle(fontFamily: "RobotoBlack", fontSize:17, color: Colors.red, fontWeight:FontWeight.bold)),
+                  ),
+                  ],
+                ),
+
+                
+              ),
+              Container(
+                child: Text("Xem tất cả", style: TextStyle(fontFamily: "Roboto", fontSize:20, color:Colors.blue)),
+              )
+            ],
+          )
+        ),
+        Container(
+          padding: EdgeInsets.only(top: 10, bottom: 15),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                        radius: 40,
                         child: ClipOval(
                           child: Image.asset(
                             'images/lake.jpg',
                           ),
                         ),
                       ),
-                    ),
                     Container(
                       padding: EdgeInsets.only(left: 10),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Nguyễn Quốc Tuấn',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Roboto')),
-                          Text('08/11/2021',
-                              style: TextStyle(
-                                  fontSize: 10,
-                                  color: Colors.grey,
-                                  fontFamily: 'Roboto')),
+                          Container(
+                            padding: EdgeInsets.only(bottom: 5),
+                            child: Text("Quỳnh Như", style: TextStyle(fontFamily: "RobotoBlack", fontSize:20, color: Colors.black, fontWeight:FontWeight.bold)),
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(bottom: 5),
+                            child: Text("34 bạn chung" , style: TextStyle(fontFamily: "RobotoBlack", color: Colors.grey)),
+                          ),
+                          Container(
+                            child: Row(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.only(right: 10),
+                                  child: SizedBox(
+                                  width: 100,
+                                  height: 32,//  // specific value
+                                  child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5),),
+                                  onPressed: () {},
+                                  color: Colors.blue[800],
+                                  textColor: Colors.white,
+                                  child: Text("Chấp nhận",
+                                    style: TextStyle(fontSize: 14)),
+                                ),
+                                )
+                                  
+                                ),
+
+                                Container(
+                                  child: SizedBox(
+                                  width: 100,
+                                  height: 32,// specific value
+                                  child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5),),
+                                  onPressed: () {},
+                                  color: Colors.grey[400],
+                                  textColor: Colors.black,
+                                  child: Text("Xóa",
+                                    style: TextStyle(fontSize: 14)),
+                                ),
+                                )
+
+                                ),
+                              ],
+
+                            )
+                          ),
                         ],
                       ),
-                    ),
+                    ) 
                   ],
-                ),
+                )
               ),
-              Text('Bạn chung:14',
-                  style: TextStyle(color: Colors.grey, fontFamily: 'Roboto')),
-              TextButton(
-                child: Text(
-                  'Hủy kết bạn',
-                  style: TextStyle(fontSize: 15.0, fontFamily: 'RobotoBlack'),
-                ),
-                onPressed: () {},
-              ),
+              Text("8 tuần", style: TextStyle(fontFamily: "RobotoBlack", color: Colors.grey)),
             ],
           ),
         ),
-        Container(
-          padding: EdgeInsets.only(top: 10, bottom: 10),
+                  Container(
+          padding: EdgeInsets.only(top: 10, bottom: 15),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 child: Row(
                   children: [
-                    Container(
-                      child: CircleAvatar(
-                        radius: 18,
+                    CircleAvatar(
+                        radius: 40,
                         child: ClipOval(
                           child: Image.asset(
                             'images/lake.jpg',
                           ),
                         ),
                       ),
-                    ),
                     Container(
                       padding: EdgeInsets.only(left: 10),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Hồ Khánh Duy',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Roboto')),
-                          Text('08/11/2021',
-                              style: TextStyle(
-                                  fontSize: 10,
-                                  color: Colors.grey,
-                                  fontFamily: 'Roboto')),
+                          Container(
+                            padding: EdgeInsets.only(bottom: 5),
+                            child: Text("Bích Hằng", style: TextStyle(fontFamily: "RobotoBlack", fontSize:20, color: Colors.black, fontWeight:FontWeight.bold)),
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(bottom: 5),
+                            child: Text("34 bạn chung" , style: TextStyle(fontFamily: "RobotoBlack", color: Colors.grey)),
+                          ),
+                          Container(
+                            child: Row(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.only(right: 10),
+                                  child: SizedBox(
+                                  width: 100,
+                                  height: 32,//  // specific value
+                                  child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5),),
+                                  onPressed: () {},
+                                  color: Colors.blue[800],
+                                  textColor: Colors.white,
+                                  child: Text("Chấp nhận",
+                                    style: TextStyle(fontSize: 14)),
+                                ),
+                                )
+                                  
+                                ),
+
+                                Container(
+                                  child: SizedBox(
+                                  width: 100,
+                                  height: 32,// specific value
+                                  child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5),),
+                                  onPressed: () {},
+                                  color: Colors.grey[400],
+                                  textColor: Colors.black,
+                                  child: Text("Xóa",
+                                    style: TextStyle(fontSize: 14)),
+                                ),
+                                )
+
+                                ),
+                              ],
+
+                            )
+                          ),
                         ],
                       ),
-                    ),
+                    ) 
                   ],
-                ),
+                )
               ),
-              Text('Bạn chung:14',
-                  style: TextStyle(color: Colors.grey, fontFamily: 'Roboto')),
-              TextButton(
-                child: Text(
-                  'Hủy kết bạn',
-                  style: TextStyle(fontSize: 15.0, fontFamily: 'RobotoBlack'),
-                ),
-                onPressed: () {},
-              ),
+              Text("32 tuần", style: TextStyle(fontFamily: "RobotoBlack", color: Colors.grey)),
             ],
           ),
         ),
-        Container(
-          padding: EdgeInsets.only(top: 10, bottom: 10),
+                Container(
+          padding: EdgeInsets.only(top: 10, bottom: 15),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 child: Row(
                   children: [
-                    Container(
-                      child: CircleAvatar(
-                        radius: 18,
+                    CircleAvatar(
+                        radius: 40,
                         child: ClipOval(
                           child: Image.asset(
                             'images/lake.jpg',
                           ),
                         ),
                       ),
-                    ),
                     Container(
                       padding: EdgeInsets.only(left: 10),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Đức Toàn',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Roboto')),
-                          Text('08/11/2021',
-                              style: TextStyle(
-                                  fontSize: 10,
-                                  color: Colors.grey,
-                                  fontFamily: 'Roboto')),
+                          Container(
+                            padding: EdgeInsets.only(bottom: 5),
+                            child: Text("Bo Nguyễn", style: TextStyle(fontFamily: "RobotoBlack", fontSize:20, color: Colors.black, fontWeight:FontWeight.bold)),
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(bottom: 5),
+                            child: Text("34 bạn chung" , style: TextStyle(fontFamily: "RobotoBlack", color: Colors.grey)),
+                          ),
+                          Container(
+                            child: Row(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.only(right: 10),
+                                  child: SizedBox(
+                                  width: 100,
+                                  height: 32,//  // specific value
+                                  child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5),),
+                                  onPressed: () {},
+                                  color: Colors.blue[800],
+                                  textColor: Colors.white,
+                                  child: Text("Chấp nhận",
+                                    style: TextStyle(fontSize: 14)),
+                                ),
+                                )
+                                  
+                                ),
+
+                                Container(
+                                  child: SizedBox(
+                                  width: 100,
+                                  height: 32,// specific value
+                                  child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5),),
+                                  onPressed: () {},
+                                  color: Colors.grey[400],
+                                  textColor: Colors.black,
+                                  child: Text("Xóa",
+                                    style: TextStyle(fontSize: 14)),
+                                ),
+                                )
+
+                                ),
+                              ],
+
+                            )
+                          ),
                         ],
                       ),
-                    ),
+                    ) 
                   ],
-                ),
+                )
               ),
-              Text('Bạn chung:14',
-                  style: TextStyle(color: Colors.grey, fontFamily: 'Roboto')),
-              TextButton(
-                child: Text(
-                  'Hủy kết bạn',
-                  style: TextStyle(fontSize: 15.0, fontFamily: 'RobotoBlack'),
-                ),
-                onPressed: () {},
-              ),
+              Text("1 tuần", style: TextStyle(fontFamily: "RobotoBlack", color: Colors.grey)),
             ],
           ),
         ),
-        Container(
-          padding: EdgeInsets.only(top: 10, bottom: 10),
+                Container(
+          padding: EdgeInsets.only(top: 10, bottom: 15),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 child: Row(
                   children: [
-                    Container(
-                      child: CircleAvatar(
-                        radius: 18,
+                    CircleAvatar(
+                        radius: 40,
                         child: ClipOval(
                           child: Image.asset(
                             'images/lake.jpg',
                           ),
                         ),
                       ),
-                    ),
                     Container(
                       padding: EdgeInsets.only(left: 10),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Nguyễn Đức Phát',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Roboto')),
-                          Text('08/11/2021',
-                              style: TextStyle(
-                                  fontSize: 10,
-                                  color: Colors.grey,
-                                  fontFamily: 'Roboto')),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Text('Bạn chung:14',
-                  style: TextStyle(color: Colors.grey, fontFamily: 'Roboto')),
-              TextButton(
-                child: Text(
-                  'Hủy kết bạn',
-                  style: TextStyle(fontSize: 15.0, fontFamily: 'RobotoBlack'),
-                ),
-                onPressed: () {},
-              ),
-            ],
-          ),
-        ),
-        Container(
-          padding: EdgeInsets.only(top: 10, bottom: 10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                child: Row(
-                  children: [
-                    Container(
-                      child: CircleAvatar(
-                        radius: 18,
-                        child: ClipOval(
-                          child: Image.asset(
-                            'images/lake.jpg',
+                          Container(
+                            padding: EdgeInsets.only(bottom: 5),
+                            child: Text("Long Phạm", style: TextStyle(fontFamily: "RobotoBlack", fontSize:20, color: Colors.black, fontWeight:FontWeight.bold)),
                           ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Column(
-                        children: [
-                          Text('Khả Hào',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Roboto')),
-                          Text('08/11/2021',
-                              style: TextStyle(
-                                  fontSize: 10,
-                                  color: Colors.grey,
-                                  fontFamily: 'Roboto')),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Text('Bạn chung:14',
-                  style: TextStyle(color: Colors.grey, fontFamily: 'Roboto')),
-              TextButton(
-                child: Text(
-                  'Hủy kết bạn',
-                  style: TextStyle(fontSize: 15.0, fontFamily: 'RobotoBlack'),
-                ),
-                onPressed: () {},
-              ),
-            ],
-          ),
-        ),
-        Container(
-          padding: EdgeInsets.only(top: 10, bottom: 10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                child: Row(
-                  children: [
-                    Container(
-                      child: CircleAvatar(
-                        radius: 18,
-                        child: ClipOval(
-                          child: Image.asset(
-                            'images/lake.jpg',
+                          Container(
+                            padding: EdgeInsets.only(bottom: 5),
+                            child: Text("34 bạn chung" , style: TextStyle(fontFamily: "RobotoBlack", color: Colors.grey)),
                           ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Column(
-                        children: [
-                          Text('Hào Fake 6',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'RobotoBlack')),
-                          Text('08/11/2021',
-                              style: TextStyle(
-                                  fontSize: 10,
-                                  color: Colors.grey,
-                                  fontFamily: 'RobotoBlack')),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Text('Bạn chung:14',
-                  style:
-                      TextStyle(color: Colors.grey, fontFamily: 'RobotoBlack')),
-              TextButton(
-                child: Text(
-                  'Hủy kết bạn',
-                  style: TextStyle(fontSize: 15.0, fontFamily: 'RobotoBlack'),
-                ),
-                onPressed: () {},
-              ),
-            ],
-          ),
-        ),
-        Container(
-          padding: EdgeInsets.only(top: 10, bottom: 10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                child: Row(
-                  children: [
-                    Container(
-                      child: CircleAvatar(
-                        radius: 18,
-                        child: ClipOval(
-                          child: Image.asset(
-                            'images/lake.jpg',
+                          Container(
+                            child: Row(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.only(right: 10),
+                                  child: SizedBox(
+                                  width: 100,
+                                  height: 32,//  // specific value
+                                  child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5),),
+                                  onPressed: () {},
+                                  color: Colors.blue[800],
+                                  textColor: Colors.white,
+                                  child: Text("Chấp nhận",
+                                    style: TextStyle(fontSize: 14)),
+                                ),
+                                )
+                                  
+                                ),
+
+                                Container(
+                                  child: SizedBox(
+                                  width: 100,
+                                  height: 32,// specific value
+                                  child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5),),
+                                  onPressed: () {},
+                                  color: Colors.grey[400],
+                                  textColor: Colors.black,
+                                  child: Text("Xóa",
+                                    style: TextStyle(fontSize: 14)),
+                                ),
+                                )
+
+                                ),
+                              ],
+
+                            )
                           ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Column(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        children: [
-                          // ignore: prefer_const_constructors
-                          Text('Hào Fake 7',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'RobotoBlack')),
-                          Text('08/11/2021',
-                              style: TextStyle(
-                                  fontSize: 10,
-                                  color: Colors.grey,
-                                  fontFamily: 'RobotoBlack')),
                         ],
                       ),
-                    ),
+                    ) 
                   ],
-                ),
+                )
               ),
-              Text('Bạn chung:14',
-                  style:
-                      TextStyle(color: Colors.grey, fontFamily: 'RobotoBlack')),
-              TextButton(
-                child: Text('Hủy kết bạn',
-                    style:
-                        TextStyle(fontSize: 15.0, fontFamily: 'RobotoBlack')),
-                onPressed: () {},
-              ),
+              Text("8 tuần", style: TextStyle(fontFamily: "RobotoBlack", color: Colors.grey)),
             ],
           ),
         ),
@@ -1777,3 +2061,5 @@ class _Security extends State<Security> {
     );
   }
 }
+
+
